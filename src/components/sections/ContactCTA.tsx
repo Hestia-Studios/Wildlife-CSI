@@ -31,7 +31,7 @@ export function ContactCTA() {
             body: JSON.stringify(values),
         });
         if (res.ok) {
-            toast.success("Received! We'll be in touch shortly.");
+            toast.success("Received! We&apos;ll be in touch shortly.");
             form.reset();
         } else {
             toast.error("Something went wrong. Please try again.");
@@ -46,7 +46,7 @@ export function ContactCTA() {
                     Ready to train?
                 </h2>
                 <p className="text-[#9A9080] text-sm leading-relaxed mb-10">
-                    Whether you're law enforcement, a prosecutor, investigator, or engaged civilian —
+                    Whether you&apos;re law enforcement, a prosecutor, investigator, or engaged civilian —
                     the Wildlife CSI Academy is unlike anything else in the field.
                 </p>
 
