@@ -1,3 +1,4 @@
+import Image from "next/image";
 const phases = [
     {
         n: "Phase 01",
@@ -44,10 +45,10 @@ export function SampleCourse() {
                     </div>
 
                     {/* Image placeholder for course imagery */}
-                    <div className="w-full h-48 bg-[#111009] border border-[#2A2520] flex items-center justify-center">
-            <span className="text-[#9A9080] text-xs uppercase tracking-widest">
-              Course photo — swap with real image
-            </span>
+                    <div className="w-full h-128 bg-[#111009] border border-[#2A2520] flex items-center justify-center">
+
+                        <Image src={"/crime-scene-2.jpg"} alt="Sample course imagery" className="object-cover w-full h-full" width={500} height={400}/>
+
                     </div>
                 </div>
             </div>
