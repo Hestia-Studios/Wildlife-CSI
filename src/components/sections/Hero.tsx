@@ -39,7 +39,7 @@ export function Hero() {
                         Explore Curriculum
                     </Link>
                     <Link
-                        href="#contact"
+                        href="#register"
                         className="bg-[#C4973A] text-[#0A0908] text-xs font-medium uppercase tracking-widest px-7 py-3.5 hover:bg-[#D4A74A] transition-colors"
                     >
                         Get In Touch
