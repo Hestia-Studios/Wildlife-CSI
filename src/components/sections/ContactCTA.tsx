@@ -22,6 +22,7 @@ const schema = z.object({
     message: z.string().optional(),
 });
 
+
 type ContactValues = z.infer<typeof schema>;
 
 export function ContactCTA() {
