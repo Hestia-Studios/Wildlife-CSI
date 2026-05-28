@@ -22,7 +22,7 @@ export function SampleCourse() {
         <section className="bg-[#0E0D0B] border-b border-[#1E1B16] px-6 py-16">
             <div className="max-w-6xl mx-auto">
                 <p className="text-[#C4973A] text-xs font-medium uppercase tracking-widest mb-2">
-                    Sample Course
+                    Courses
                 </p>
                 <h2 className="text-4xl font-medium text-[#F5EDD8] tracking-tight mb-3">
                     Crime Scene Search & Evidence Collection

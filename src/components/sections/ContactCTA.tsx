@@ -3,12 +3,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import {
     Form, FormControl, FormField, FormItem, FormLabel, FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+
+const EMAILJS_SERVICE_ID = "service_cwok40l";
+const EMAILJS_TEMPLATE_ID = "template_q6kcvvg";
+const EMAILJS_PUBLIC_KEY = "wCvrATJmC0GpxdApz";
 
 const schema = z.object({
     name: z.string().min(2, "Name required"),
@@ -26,18 +31,27 @@ export function ContactCTA() {
     });
 
     async function onSubmit(values: ContactValues) {
-        const res = await fetch("/api/contact", {
-            method: "POST",
-            body: JSON.stringify(values),
-        });
-        if (res.ok) {
-            toast.success("Received! We&apos;ll be in touch shortly.");
+        try {
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    subject:      "Wildlife CSI Academy Site Lead",
+                    from_name:    values.name,
+                    from_email:   values.email,
+                    organization: values.organization || "Not provided",
+                    message:      values.message || "No message provided",
+                    to_email:     "jackvalladares@gmail.com",
+                },
+                EMAILJS_PUBLIC_KEY
+            );
+            toast.success("Received! We'll be in touch shortly.");
             form.reset();
-        } else {
+        } catch (err) {
+            console.error("EmailJS error:", err);
             toast.error("Something went wrong. Please try again.");
         }
     }
-
 
     return (
         <section id="register" className="bg-[#0A0908] border-t-2 border-[#C4973A] px-6 py-20">
