@@ -41,7 +41,7 @@ export function ContactCTA() {
                     from_email:   values.email,
                     organization: values.organization || "Not provided",
                     message:      values.message || "No message provided",
-                    to_email:     "jackvalladares@gmail.com",
+                    to_email:     "sherylmccollum@aol.com",
                 },
                 EMAILJS_PUBLIC_KEY
             );
